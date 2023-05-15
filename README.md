@@ -1,6 +1,6 @@
 # Some of my dotfiles
 
-Some of my dotfiles, and bash script to backup them up.
+Some of my dotfiles, and bash script to back them up.
 
 ## Usage 
 

@@ -4,8 +4,7 @@ Some of my dotfiles, and bash script to backup them up.
 
 ## Usage 
 
-`chmod +x backup.h`
-`./backup.sh`
+`chmod +x backup.sh && ./backup.sh`
 
 `backup.sh` will move dotfiles specified in the file to `./dotfiles`
 

@@ -1,0 +1,17 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.history
+HISTSIZE=2000
+SAVEHIST=2000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/andrew/.zshrc'
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
+prompt adam1
+neofetch
+
+alias python=python3
+export GOPATH=$HOME/go

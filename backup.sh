@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dot_files=(~/.zshrc ~/.zshrc.pre-oh-my-zsh ~/.config/Code/User/settings.json ~/.config/neofetch/config.conf)
+dotFiles=(~/.zshrc ~/.zshrc.pre-oh-my-zsh ~/.config/Code/User/settings.json ~/.config/neofetch/config.conf)
 backupDir=$"./dotfiles"
 
 # Colours
@@ -11,11 +11,11 @@ NC='\033[0m'
 
 sleep 1
 
-today=$(date +%Y-%m-%d_%H-%M-%S)
+previousDate=$(date +%Y-%m-%d_%H-%M-%S)
 if [ -e $backupDir ]; then
-  tar -czf "./old/${backupDir}-${today}.tar.gz2" "$backupDir"
+  tar -czf "./old/${backupDir}-${previousDate}.tar.gz2" "$backupDir"
   mkdir -p "old"
-  echo -e "Saved Previous .dotfiles to ${PU}$backupDir-${today}"
+  echo -e "Saved Previous .dotfiles to ${PU}$backupDir-${previousDate}"
 fi
 
 rm -rf "$backupDir" && mkdir -p "$backupDir"; sleep 1
@@ -23,7 +23,7 @@ rm -rf "$backupDir" && mkdir -p "$backupDir"; sleep 1
 echo -e "Backing up..."
 tput sc
 
-for path in "${dot_files[@]}"; do
+for path in "${dotFiles[@]}"; do
   if [ -f "$path" ]; then
     tput rc;tput el; printf "${PU}\t$path"; cp --parents --recursive "$path" "$backupDir"
     sleep 0.5

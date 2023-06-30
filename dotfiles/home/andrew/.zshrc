@@ -107,8 +107,11 @@ source $ZSH/oh-my-zsh.sh
 
 # ALIASES
 alias c='clear'
-alias update='sudo dnf update'
+alias update='sudo dnf update && flatpak update'
 
 trim_video () {
     ffmpeg -i "$1" -ss "$2" -t "$3" -c:v copy "$4" && echo "Trimmed and Saved to: $4" 
 }
+
+
+
